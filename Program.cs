@@ -10,12 +10,12 @@ namespace HW_4
             {
                 ChangingArray changingArray = new ChangingArray();
 
-                Console.Write("Длинна массива:");
+                Console.Write("Array length:");
                 int n = Convert.ToInt32(Console.ReadLine());
                 int[] mainArray = new int[n];
 
                 Random random = new Random();
-                Console.WriteLine("Основной масив");
+                Console.WriteLine("Main array");
                 for (int i = 0; i < mainArray.Length; i++)
                 {
                     mainArray[i] = random.Next(1, 26);
@@ -42,7 +42,7 @@ namespace HW_4
 
                 Console.WriteLine();
                 Console.WriteLine(new string('-', 50));
-                Console.WriteLine("Масив четных чисел");
+                Console.WriteLine("Array of even numbers");
 
                 foreach (int i in evvenArray)
                 {
@@ -51,26 +51,26 @@ namespace HW_4
 
                 Console.WriteLine();
                 Console.WriteLine(new string('-', 50));
-                Console.WriteLine("Масив не четных чисел");
+                Console.WriteLine("Array of odd numbers");
 
                 foreach (int i in oddArray)
                 {
                     Console.Write($"{i} ");
                 }
 
-                int indexEvven = changingArray.LetterArray(evvenArray, "evvenArray");
-                int indexOdd = changingArray.LetterArray(oddArray, "oddArray");
+                int indexEvven = changingArray.LetterArray(evvenArray, 2);
+                int indexOdd = changingArray.LetterArray(oddArray, 1);
 
                 Console.WriteLine();
                 Console.WriteLine(new string('-', 50));
 
                 if (indexEvven > indexOdd)
                 {
-                    Console.WriteLine($"В масиве четных чисел букв в верхнем регистре болеше: {indexEvven} против {indexOdd}");
+                    Console.WriteLine($"In an array of even numbers of uppercase letters over: {indexEvven} vs {indexOdd}");
                 }
                 else
                 {
-                    Console.WriteLine($"В масиве не четных чисел букв в верхнем регистре болеше: {indexOdd} против {indexEvven}");
+                    Console.WriteLine($"In an array of odd numbers of uppercase letters over: {indexOdd} vs: {indexOdd}");
                 }
 
                 Console.ReadKey();
